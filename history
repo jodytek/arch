@@ -1,0 +1,155 @@
+[root@archlinux ~]# history
+ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
+hwclock --systohc
+pacman -S vi vim git base-devel go sudo --noconfirm
+vi /etc/locale.gen
+locale-gen
+EDITOR=vi visudo
+useradd -m -g users -G wheel jody
+su -l jody -c 'git clone https://aur.archlinux.org/yay.git' 
+su -l jody -c 'cd yay && makepkg -si --noconfirm' 
+
+
+
+   62  vi /etc/mkinitcpio.conf
+   63  mkinitcpio -p linux-zen
+pacman -S intel-ucode
+   66  pacman -S nvidia nvidia-utils
+   67  clear
+   68  mkinitcpio -p linux-zen
+   69  su - jody
+   70  mkinitcpio -p linux-zen
+
+   
+   71  bootctl install
+   72  vi /boot/loader/loader.conf
+   73  vim /boot/loader/entries/arch.conf
+   74  vi /boot/loader/entries/arch.conf
+   75  blkid
+   76  cat /etc/fstab 
+   77  vi /boot/loader/entries/arch.conf
+   78  cat /etc/fstab 
+   79  pacman -Rcnsu grub
+   80  clear
+   81  pacman -Q |wc -l
+   82  clear
+   83  pacman -S iwd
+   84  systemctl enable systemd-networkd.service
+   85  systemctl enable systemd-resolved.service
+   86  clear
+   enp0s10
+   87  cd /etc/systemd/network/
+   88  ls -l
+   89  cd ../
+   90  cat networkd.conf 
+   91  networkctl list
+   92  vi /etc/systemd/network/20-wired.network
+   93  vi /etc/systemd/network/20-wired.network
+   94  vi /etc/systemd/network/25-wireless.network
+   95  clear
+   96  ip link
+   97  clear
+   98  passwd
+   99  passwd jody
+  100  clear
+  101  history
+  102  hostnamectl set-hostname arch-mbp
+  103  pacman -S openssh
+  104  systemctl enable sshd
+  105  clear
+  106  vi /etc/ssh/sshd_config 
+  107  mkinitcpio -p linux-zen
+  108  history
+  109  exit
+  110  lsblk
+  111  cat /etc/fstab 
+  112  blkid
+  113  vi /boot/loader/entries/arch.conf
+  114  clear
+  115  find / -name "vmlinuz-linux"
+  116  find / -name "initramfs-linux.img"
+  117  vi /boot/loader/entries/arch.conf
+  118  exit
+  119  clear
+  120  ls -ld /boot/loader/entries/arch.conf
+  121  vi /boot/loader/entries/arch.conf
+  122  df -h
+  123  lsblk /dev/sda3
+  124  cat /etc/fstab 
+  125  cat /boot/loader/loader.conf
+  126  bootctl --path=/boot update
+  127  vi /boot/loader/entries/arch.conf
+  128  exit
+  129  cleqar
+  130  clear
+  131  bootctl --path=/boot install
+  132  cd /boot/loader/entries
+  133  ls
+  134  bootctl update
+  135  bootctl list
+  136  vi /boot/loader/entries/arch.conf
+  137  bootctl update
+  138  bootctl list
+  139  exit
+  140  ip a
+  141  poweroff
+  142  clear
+  143  iwctl
+  144  systemctl enable iwd.service
+  145  systemctl start iwd.service
+  146  clear
+  147  iwctl 
+  148  ip a
+  149  iwctl --passphrase H0rse\$hoe71 station wlan0 connect Yoga-Buddha
+  150  ip a
+  151  ping google.com
+  152  clear
+  153  cd /etc/iwd/
+  154  la
+  155  la
+  156  ls
+  157  ls -la
+  158  iwctl station wlan0 show
+  159  cd
+  160  reboot
+  161  ip a
+  162  clear
+  163  which snapper
+  164  clear
+  165  pacman -S snapper
+  166  clear
+  167  df -h
+  168  pacman -S neofetch
+  169  clear
+  170  neofetch 
+  171  df -h
+  172  umount /.snapshots/
+  173  rm /.snapshots/
+  174  rm -f /.snapshots/
+  175  rm -rf /.snapshots/
+  176  clear
+  177  snapper -c root create-config /
+  178  vi /etc/snapper/configs/root 
+  179  df -g
+  180  df -h
+  181  chmod a+rx /.snapshots/
+  182  systemctl start snapper-timeline.timer
+  183  systemctl enable snapper-timeline.timer
+  184  systemctl enable snapper-cleanup.timer
+  185  systemctl start snapper-cleanup.timer
+  186  clear
+  187  reboot
+  188  clerr
+  189  clear
+  190  df -g
+  191  df -h
+  192  clear
+  193  snapper-c root list
+  194  snapper -c root list
+  195  snapper -c root create -c timeline --description AfterInstall
+  196  snapper -c root list
+  197  su - jody
+  198  snapper -c root list
+  199  ip a
+  200  reboot
+  201  bootctl update
