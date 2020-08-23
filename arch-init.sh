@@ -9,5 +9,3 @@ echo "The initial config is complete."
 echo "Please run ./arch-inst.sh"
 sleep 5
 arch-chroot /mnt
-
-# Test commit
