@@ -3,7 +3,7 @@ pacman -S reflector --noconfirm
 reflector -c "US" -f 12 -l 10 -n 12 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -S linux linux-firmware linux-lts linux-headers linux-lts-headers --noconfirm
 pacman -S vi vim git base-devel go sudo btrfs-progs nfs-utils iwd intel-ucode openssh snapper neofetch --noconfirm
-pacman -S xorg-server xorg-xinit plasma-desktop sddm --noconfirm
+# pacman -S xorg-server xorg-xinit plasma-desktop sddm --noconfirm
 pacman -S xorg-server xorg-xinit --noconfirm
 bootctl install
 
@@ -22,11 +22,11 @@ echo "options root=UUID=$UUID   rw rootflags=subvol=/@" >> /boot/loader/entries/
 ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
 hwclock --systohc
 locale-gen
-hostnamectl set-hostname arch-mbp
+hostnamectl set-hostname arch-mba
 
 useradd -m -g users -G wheel jody
-passwd jody
-passwd
+# passwd jody
+# passwd
 su - jody
     git clone https://aur.archlinux.org/yay.git
     cd yay && makepkg -si --noconfirm
@@ -44,7 +44,7 @@ su - jody
     cd wd719x-firmware
     makepkg -sri
     exit
-nvidia-xinit
+# nvidia-xinit
 mkinitcpio -p linux
 mkinitcpio -p linux-lts
 systemctl enable systemd-networkd.service
@@ -58,7 +58,7 @@ bootctl list
 
 umount /mnt
 exit
-umount -a 
+umount -a
 reboot
 
 # after reboot
